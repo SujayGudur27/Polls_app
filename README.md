@@ -39,3 +39,11 @@ This project is part of Day 1 learning and setup.
 The polls page currently returns a simple response.
 
 More features will be added as I continue learning Django.
+
+
+Demo (Day 1)
+
+
+
+Loom walkthrough of Day 1 setup:
+https://www.loom.com/share/aad676821ae04050aab30cc6805fa9e5
