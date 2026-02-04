@@ -44,6 +44,13 @@ More features will be added as I continue learning Django.
 Demo (Day 1)
 
 
+Demo (Day 2 )
+The Django admin panel is enabled and accessible at:
+http://127.0.0.1:8000/admin/
+
+Models are registered in the admin for easy management.
+
+
 
 Loom walkthrough of Day 1 setup:
 https://www.loom.com/share/aad676821ae04050aab30cc6805fa9e5
