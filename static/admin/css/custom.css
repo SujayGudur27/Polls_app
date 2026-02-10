@@ -1,0 +1,48 @@
+/* ===== GLOBAL BACKGROUND ===== */
+body {
+    background: url("../img/admin_bg2.webp") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ===== MAIN CONTENT WRAPPER ===== */
+#content,
+.dashboard #content {
+    background: rgba(0, 0, 0, 0.55);
+    
+}
+
+/* ===== MODULE BOXES (Polls, Users, etc.) ===== */
+.module,
+.dashboard .module {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+}
+
+/* ===== RECENT ACTIONS ===== */
+#recent-actions-module {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+}
+
+/* ===== HEADER BAR ===== */
+#header {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== TEXT COLOR ===== */
+body,
+.module caption,
+.module h2,
+#content h1,
+#content h2 {
+    color: #ffffff;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #4fc3f7;
+}
+
+a:hover {
+    color: #81d4fa;
+}

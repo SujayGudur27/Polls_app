@@ -1,0 +1,40 @@
+/* ===== PAGE BACKGROUND ===== */
+body {
+    background: url("images/background2.png") no-repeat center center fixed;
+    background-size: cover;
+    color: red;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== QUESTION TITLE ===== */
+h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 40px 0;
+    color: white;
+}
+
+/* ===== QUESTIONS LIST ===== */
+ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+/* ===== QUESTION LINKS ===== */
+li {
+    margin: 12px 0;
+}
+
+li a {
+    color: red;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+li a:hover {
+    color: #ffb3b3;
+    text-decoration: underline;
+}
