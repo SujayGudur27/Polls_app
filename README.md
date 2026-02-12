@@ -1,147 +1,163 @@
-# Polls App (Django)
-
 Django Polls Application
 
-This project is a complete implementation of the official Django tutorial (Parts 1–8). It demonstrates building a full-stack web application using Django, covering models, views, templates, forms, admin customization, testing, static files, and third-party integrations.
+A complete implementation of the official Django tutorial (Parts 1–8), covering core Django concepts including models, views, templates, forms, testing, admin customization, static files, and third-party integrations.
 
-Project Overview
+Overview
 
-The application is a simple polling system where:
+This project is a web-based polling system built using Django.
 
-Admin users can create questions and multiple choices.
+It allows:
 
-Users can vote on questions.
+Admin users to create questions and multiple choices
 
-Results are displayed dynamically.
+Users to vote on questions
 
-Only published questions are visible to users.
+Display of real-time results
 
-Automated tests validate application logic.
+Filtering of unpublished (future) questions
 
-The Django admin interface is customized.
+Automated validation through testing
 
-Static styling and images are integrated.
+Admin UI customization
 
-Django Debug Toolbar is configured for development debugging.
+Static styling with CSS and images
+
+Debugging using Django Debug Toolbar
+
+Architecture
+
+This project follows Django’s MTV (Model–Template–View) architecture.
+
+URL → View → Model (ORM) → Template → HTTP Response
+
+
+Model: Defines database structure and business logic
+
+View: Handles request and returns response
+
+Template: Handles presentation layer
+
+URLconf: Maps URLs to views
 
 Features Implemented
-1. Models and Database (Part 1 & 2)
+Models (Database Layer)
 
-Created Question and Choice models.
+Question model
 
-Implemented one-to-many relationship using ForeignKey.
+Choice model
 
-Added custom model method was_published_recently().
+One-to-many relationship using ForeignKey
 
-Used Django ORM for database interaction.
+Custom model method: was_published_recently()
 
-Applied migrations to manage schema changes.
+Timezone-aware filtering using timezone.now()
 
-Registered models in Django Admin.
+Database migrations applied
 
-2. Views, URLs, and Templates (Part 3)
+Views and Routing
 
-Implemented class-based generic views:
+Class-Based Generic Views:
 
-IndexView (ListView)
+ListView (IndexView)
 
 DetailView (DetailView)
 
-ResultsView (DetailView)
+DetailView (ResultsView)
 
-Connected views using URL configuration.
+Custom function-based vote() view
 
-Used template inheritance and Django Template Language.
+URL namespacing
 
-Implemented URL namespacing.
+Query filtering using get_queryset()
 
-Filtered unpublished (future) questions using get_queryset().
+Exclusion of future-dated questions
 
-Flow:
-URL → View → ORM → Template → HTTP Response
+Form Handling and Voting
 
-3. Form Handling and Voting Logic (Part 4)
+HTML form with POST method
 
-Converted detail page into an HTML form.
+CSRF protection
 
-Used POST method for data submission.
+F() expressions for atomic updates
 
-Added CSRF protection.
+Post/Redirect/Get pattern
 
-Implemented voting logic in vote() view.
+Reverse URL resolution using reverse()
 
-Used F() expressions to avoid race conditions.
+Automated Testing
 
-Implemented Post/Redirect/Get pattern.
+Implemented both model tests and view tests.
 
-Used reverse() for dynamic URL resolution.
+Model Tests
 
-4. Automated Testing (Part 5)
+Future question validation
 
-Wrote model tests for:
+Old question validation
 
-Future questions
+Recently published logic validation
 
-Old questions
-
-Recently published questions
-
-Wrote view tests for:
+View Tests
 
 Index page behavior
 
 Future question exclusion
 
+Multiple question ordering
+
 Detail view restrictions
 
-Used Django’s TestCase.
-
-Used Django test client for request simulation.
-
-Tests run in isolated test database.
-
-Command to run tests:
+Run tests using:
 
 python manage.py test
 
-5. Static Files and Styling (Part 6)
 
-Added custom CSS styling.
+All tests run in an isolated temporary test database.
 
-Added background images.
+Static Files and Styling
 
-Used {% load static %} template tag.
+Static file structure using namespacing
 
-Organized static files using namespacing:
+Custom CSS styling
 
-polls/static/polls/
+Background images
 
+Responsive styling improvements
 
-Customized Django Admin background and styling.
+Static file loading using {% load static %}
 
-6. Admin Customization (Part 7)
+Directory structure:
 
-Created custom QuestionAdmin.
+polls/
+└── static/
+    └── polls/
+        ├── style.css
+        └── images/
 
-Used:
+Admin Customization
 
-fieldsets
+Enhanced Django’s built-in admin panel:
 
-list_display
+Custom ModelAdmin
 
-list_filter
+Field grouping using fieldsets
 
-search_fields
+Inline editing using TabularInline
 
-Implemented inline editing using TabularInline.
+Custom columns using list_display
 
-Used @admin.display decorator for custom boolean column.
+Filters using list_filter
 
-Customized admin branding using template override.
+Search functionality using search_fields
 
-7. Third-Party Integration (Part 8)
+Boolean column customization using @admin.display
 
-Installed Django Debug Toolbar.
+Admin branding customization
+
+Custom admin CSS styling
+
+Third-Party Integration
+
+Integrated Django Debug Toolbar for development debugging.
 
 Configured:
 
@@ -153,19 +169,17 @@ Debug URLs
 
 INTERNAL_IPS
 
-Used toolbar panels to inspect:
+Toolbar provides:
 
-SQL queries
+SQL query inspection
 
-Templates
+Template rendering details
 
-Static files
+Static file tracking
 
-Headers
+Request/response debugging
 
-Settings
-
-Request lifecycle
+Settings inspection
 
 Technologies Used
 
@@ -183,81 +197,68 @@ Django ORM
 
 Django Generic Views
 
-Django Admin
+Django Testing Framework
 
-Django Test Framework
+Django Admin
 
 Django Debug Toolbar
 
 Project Structure
 mysite/
 │
-├── mysite/                # Project settings
-├── polls/                 # Application
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   ├── admin.py
-│   ├── tests.py
-│   ├── templates/
-│   └── static/
-│
 ├── manage.py
-└── db.sqlite3
+├── db.sqlite3
+│
+├── mysite/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+└── polls/
+    ├── models.py
+    ├── views.py
+    ├── urls.py
+    ├── admin.py
+    ├── tests.py
+    ├── templates/
+    └── static/
 
 How to Run the Project
 
-Clone the repository:
+Clone the repository
 
 git clone <repository-url>
+cd <project-folder>
 
 
-Create and activate virtual environment:
+Create virtual environment
 
 python -m venv venv
 venv\Scripts\activate
 
 
-Install dependencies:
+Install dependencies
 
 pip install -r requirements.txt
 
 
-Apply migrations:
+Apply migrations
 
 python manage.py migrate
 
 
-Create superuser:
+Create superuser
 
 python manage.py createsuperuser
 
 
-Run development server:
+Run development server
 
 python manage.py runserver
 
 
 Access:
 
-Polls: http://127.0.0.1:8000/polls/
+Polls App: http://127.0.0.1:8000/polls/
 
-Admin: http://127.0.0.1:8000/admin/
-
-Key Learning Outcomes
-
-Understanding Django’s MTV architecture.
-
-Working with ORM instead of raw SQL.
-
-Building class-based views.
-
-Handling forms and POST requests securely.
-
-Writing automated tests.
-
-Customizing Django Admin.
-
-Managing static files properly.
-
-Integrating third-party Django packages.
+Admin Panel: http://127.0.0.1:8000/admin/
