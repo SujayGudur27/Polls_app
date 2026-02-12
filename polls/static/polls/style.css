@@ -1,7 +1,8 @@
 /* ===== PAGE BACKGROUND ===== */
 body {
-    background: url("images/background2.png") no-repeat center center fixed;
+    background: url("images/background1.png") no-repeat center center fixed;
     background-size: cover;
+
     color: red;
     font-family: Arial, sans-serif;
 }
